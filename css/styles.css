@@ -116,18 +116,23 @@ nav h1 a {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  margin: 0 12px;
+  padding-top: 0.5rem;
 }
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
   font-size: 11pt;
-  height: 35px;
+  height: 48px; /*A11y height size for touch targets */
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+.filter-options select:hover {
+    background-color: #0f00ec;
+    color: #fff;
 }
 
 /* ====================== Restaurant Listing ====================== */
