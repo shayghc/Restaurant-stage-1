@@ -30,3 +30,13 @@ self.addEventListener('install', function(event) {
         })
     );
 });
+
+// Ready the service worker for a fetch event (SW network request)
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.open('cacheName').then(function(cache) {
+            //new Response('Hello World!');
+            return cache.match(event.request);
+        })
+    );
+});
