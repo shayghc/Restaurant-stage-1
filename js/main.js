@@ -40,6 +40,7 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const select = document.getElementById('neighborhoods-select');
+    select.setAttribute('aria-label', 'select neighbourhood');
     neighborhoods.forEach(neighborhood => {
         const option = document.createElement('option');
         option.innerHTML = neighborhood;
@@ -67,7 +68,7 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
     const select = document.getElementById('cuisines-select');
-
+    select.setAttribute('aria-label', 'select cuisine');
     cuisines.forEach(cuisine => {
         const option = document.createElement('option');
         option.innerHTML = cuisine;
