@@ -37,7 +37,16 @@
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYFV25RWD2emgAxCPhUXQQZIu6gRStveI&libraries=places&callback=initMap"></script>
-
+    <script type="text/javascript">
+        // Register the service serviceWorker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/sw.js').then(function(registration) {
+                console.log('Yay!');
+            }).catch(function(error) {
+                console.log('Boo: ', error);
+            });
+        }
+    </script>
 
     <footer id="footer">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
