@@ -2,6 +2,13 @@ let restaurant;
 var map;
 
 /**
+ * Provide a title to the iframe element
+ */
+function mapsTitle () {
+  document.querySelector('iframe').title = 'Map of restaurants';
+};
+
+/**
  * Initialize Google map, called from HTML.
  */
 window.initMap = () => {
@@ -14,6 +21,7 @@ window.initMap = () => {
         center: restaurant.latlng,
         scrollwheel: false
       });
+      google.maps.event.addListenerOnce(map, 'tilesloaded', mapsTitle);
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }

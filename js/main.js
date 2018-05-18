@@ -5,6 +5,13 @@ var map
 var markers = []
 
 /**
+ * Provide a title to the iframe element
+ */
+function mapsTitle() {
+  document.querySelector('iframe').title = 'Map of restaurants';
+}
+
+/**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -80,6 +87,7 @@ window.initMap = () => {
     center: loc,
     scrollwheel: false
   });
+  google.maps.event.addListenerOnce(map, 'tilesloaded', mapsTitle);
   updateRestaurants();
 }
 
