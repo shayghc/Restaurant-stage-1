@@ -92,7 +92,7 @@ nav h1 a {
     list-style: none;
     background-color: #eee;
     font-size: 17px;
-    margin: 0;
+    margin: 30px 0 0;
     width: calc(50% - 80px);
 }
 
@@ -341,6 +341,12 @@ nav h1 a {
 }
 
 @media screen and (max-width: 395px) {
+    nav h1 {
+        padding: 10px 0;
+    }
+    nav #breadcrumb {
+        margin-top: 0;
+    }
     .filter-options select {
         font-size: 0.6rem;
         width: 42%;
@@ -402,6 +408,7 @@ nav h1 a {
     }
     #breadcrumb {
         width: 100%;
+        margin-top: 24px;
     }
     #restaurant-container {
         padding: 30px 0 30px 5%;
