@@ -68,7 +68,7 @@
     <script type="text/javascript">
         // Register the service serviceWorker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('js/sw.js').then(function(registration) {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
                 console.log('Yay!');
             }).catch(function(error) {
                 console.log('Boo: ', error);

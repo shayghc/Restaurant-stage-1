@@ -35,9 +35,17 @@ self.addEventListener('install', function(event) {
 // Ready the service worker for a fetch event (SW network request)
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.open(cacheName).then(function(cache) {
-            //new Response('Hello World!');
-            return cache.match(event.request);
-        })
-    );
+        caches.match(event.request).then(function(response) {
+            if (response !== undefined) {
+                return response;
+            } else {
+                return fetch(event.request).then(function (response) {
+                    var responseClone = response.clone();
+                    caches.open(cacheName).then(function(cache) {
+                        cache.put(event.request, responseClone);
+                    });
+                    return response;
+                });
+            }
+    }));
 });
